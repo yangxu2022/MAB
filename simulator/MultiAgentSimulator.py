@@ -33,7 +33,8 @@ class MultiAgentSimulator(object):
 
     def __init__(self, round_number, agent_factory, prefix_path):
         self.round_number = round_number
-        self.agent_num, self.agents, self.edges, self.neighbour_nodes = agent_factory.get_agent_list(round_num=self.round_number, prefix_path=prefix_path)
+        self.agent_num, self.agents, self.edges, self.neighbour_nodes = \
+            agent_factory.get_agent_list(round_num=self.round_number, prefix_path=prefix_path)
         # 初始化Router
         for agent in self.agents:
             agent.addresses = self.agents
@@ -63,7 +64,6 @@ class MultiAgentSimulator(object):
         for agent in self.agents:
             agent.edges = self.edges
 
-
     """
         Simulator主流程
     """
@@ -89,10 +89,13 @@ class MultiAgentSimulator(object):
 
 
 if __name__ == '__main__':
-    # 运行MAB例子
-    mab_si = MultiAgentSimulator(round_number=10, agent_factory=MABAgentFactory, prefix_path='../example/mab/data')
-    mab_si.main()
+    # # 运行MAB例子
+    # mab_si = MultiAgentSimulator(round_number=10, agent_factory=MABAgentFactory, prefix_path='../example/mab/data')
+    # mab_si.main()
 
     # 运行SingleAgent例子
-    single_si = MultiAgentSimulator(round_number=10, agent_factory=SingleAgentFactory, prefix_path='../example/singleagent/data')
+    single_si = MultiAgentSimulator(
+        round_number=10,
+        agent_factory=SingleAgentFactory,
+        prefix_path='../example/singleagent/data')
     single_si.main()

@@ -5,3 +5,4 @@ from agent.Router import Router
 from agent.Event import Event
 from agent.BanditProblem import BanditProblem
 from agent.BanditAgent import BaseAgent
+from agent.Cable import Cable
